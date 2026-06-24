@@ -1,0 +1,24 @@
+services:
+  wdv442-mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wdv442_space_tracker
+      MYSQL_USER: asl
+      MYSQL_PASSWORD: asl
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./var/mysql:/var/lib/mysql
+
+  node:
+    image: node:20
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run watch"
+    depends_on:
+      - wdv442-mysql
