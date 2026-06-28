@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Planet.init(
     {
+      image: DataTypes.STRING,
       name: DataTypes.STRING,
       size: DataTypes.INTEGER,
       description: DataTypes.TEXT,

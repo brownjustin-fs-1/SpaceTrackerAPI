@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Galaxy.init(
     {
+      image: DataTypes.STRING,
       name: DataTypes.STRING,
       size: DataTypes.INTEGER,
       description: DataTypes.TEXT,

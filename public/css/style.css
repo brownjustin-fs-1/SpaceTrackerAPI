@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, #17264a 0%, #0b1020 45%, #050814 100%);
+  color: #f5f7ff;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+a {
+  color: #8fd3ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body > h1,
+body > p,
+body > ul,
+body > form,
+body > hr,
+body > h2,
+body > img {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  padding-top: 45px;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-top: 28px;
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 1.05rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #2f3b63;
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+ul {
+  background: rgba(18, 26, 51, 0.92);
+  padding: 28px 45px;
+  border-radius: 16px;
+  border: 1px solid #34446f;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+li {
+  margin: 16px 0;
+}
+
+form {
+  background: rgba(18, 26, 51, 0.92);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #34446f;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #41517f;
+  background: #070b16;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  background: #4da3ff;
+  color: #06101f;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #8fd3ff;
+  transform: translateY(-2px);
+}
+
+img {
+  display: block;
+  border-radius: 16px;
+  border: 1px solid #34446f;
+  margin-top: 18px;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+body > p:first-of-type {
+  background: rgba(18, 26, 51, 0.92);
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid #34446f;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body > p:first-of-type a {
+  display: inline-block;
+  margin: 4px 3px;
+}
+
+body > p:first-of-type a:hover {
+  transform: translateY(-2px);
+}
+
+form[style] {
+  display: inline !important;
+  background: transparent;
+  padding: 0;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+}
+
+form[style] button {
+  background: #ff6b6b;
+  color: white;
+}
+
+form[style] button:hover {
+  background: #ff9b9b;
+}

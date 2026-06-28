@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Planet Form</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1><%= planet ? "Edit Planet" : "New Planet" %></h1>
+
+    <form
+      action="<%= planet ? '/planets/' + planet.id + '?_method=PUT' : '/planets' %>"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label>Name</label><br />
+      <input type="text" name="name" value="<%= planet ? planet.name : '' %>" />
+
+      <br /><br />
+
+      <label>Size</label><br />
+      <input
+        type="number"
+        name="size"
+        value="<%= planet ? planet.size : '' %>"
+      />
+
+      <br /><br />
+
+      <label>Description</label><br />
+      <textarea name="description">
+<%= planet ? planet.description : '' %></textarea
+      >
+
+      <br /><br />
+
+      <label>Image</label><br />
+      <input type="file" name="image" />
+
+      <br /><br />
+
+      <button>Save Planet</button>
+    </form>
+
+    <br />
+
+    <a href="/planets">Cancel</a>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Galaxy Form</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <h1><%= galaxy ? "Edit Galaxy" : "New Galaxy" %></h1>
+
+    <form
+      action="<%= galaxy ? '/galaxies/' + galaxy.id + '?_method=PUT' : '/galaxies' %>"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label>Name</label><br />
+      <input type="text" name="name" value="<%= galaxy ? galaxy.name : '' %>" />
+
+      <br /><br />
+
+      <label>Size</label><br />
+
+      <input
+        type="number"
+        name="size"
+        value="<%= galaxy ? galaxy.size : '' %>"
+      />
+
+      <br /><br />
+
+      <label>Description</label><br />
+
+      <textarea name="description">
+<%= galaxy ? galaxy.description : '' %></textarea
+      >
+
+      <br /><br />
+
+      <label>Image</label><br />
+
+      <input type="file" name="image" />
+
+      <br /><br />
+
+      <button>Save Galaxy</button>
+    </form>
+
+    <br />
+
+    <a href="/galaxies">Cancel</a>
+  </body>
+</html>

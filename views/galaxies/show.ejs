@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= galaxy.name %></title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<h1><%= galaxy.name %></h1>
+
+<p>Size: <%= galaxy.size %></p>
+
+<p><%= galaxy.description %></p>
+
+<% if(galaxy.image){ %>
+
+<img src="<%= galaxy.image %>" width="300">
+
+<% } %>
+
+<br><br>
+
+<a href="/galaxies">← Back</a>
+
+</body>
+</html>

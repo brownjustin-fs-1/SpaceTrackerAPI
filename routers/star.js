@@ -3,7 +3,9 @@ const router = express.Router();
 const controller = require("../controllers/starController");
 
 router.get("/", controller.getAllStars);
+router.get("/new", controller.newStarForm);
 router.get("/:id", controller.getStarById);
+router.get("/:id/edit", controller.editStarForm);
 router.post("/", controller.createStar);
 router.put("/:id", controller.updateStar);
 router.delete("/:id", controller.deleteStar);

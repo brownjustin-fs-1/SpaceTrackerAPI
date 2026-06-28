@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Form</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1><%= star ? "Edit Star" : "New Star" %></h1>
+
+<form
+action="<%= star ? '/stars/' + star.id + '?_method=PUT' : '/stars' %>"
+method="POST"
+enctype="multipart/form-data">
+
+<label>Name</label><br>
+<input type="text" name="name" value="<%= star ? star.name : '' %>">
+
+<br><br>
+
+<label>Size</label><br>
+<input type="number" name="size" value="<%= star ? star.size : '' %>">
+
+<br><br>
+
+<label>Description</label><br>
+<textarea name="description"><%= star ? star.description : '' %></textarea>
+
+<br><br>
+
+<label>Galaxy</label><br>
+<select name="GalaxyId">
+    <% galaxies.forEach(galaxy => { %>
+        <option value="<%= galaxy.id %>" <%= star && star.GalaxyId === galaxy.id ? "selected" : "" %>>
+            <%= galaxy.name %>
+        </option>
+    <% }) %>
+</select>
+
+<br><br>
+
+<label>Image</label><br>
+<input type="file" name="image">
+
+<br><br>
+
+<button>Save Star</button>
+
+</form>
+
+<br>
+
+<a href="/stars">Cancel</a>
+
+</body>
+</html>

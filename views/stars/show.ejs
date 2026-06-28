@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= star.name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1><%= star.name %></h1>
+
+<p><strong>Size:</strong> <%= star.size %></p>
+<p><%= star.description %></p>
+<p><strong>Galaxy ID:</strong> <%= star.GalaxyId %></p>
+
+<% if (star.image) { %>
+<img src="<%= star.image %>" width="300">
+<% } %>
+
+<br><br>
+
+<a href="/stars">← Back</a>
+
+</body>
+</html>

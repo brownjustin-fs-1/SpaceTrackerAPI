@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planets</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>🪐 Planets</h1>
+
+<p>
+    <a href="/">Home</a> |
+    <a href="/planets/new">➕ Add Planet</a>
+</p>
+
+<% planets.forEach(planet => { %>
+<hr>
+
+<h2><%= planet.name %></h2>
+<p><strong>Size:</strong> <%= planet.size %></p>
+<p><%= planet.description %></p>
+
+<% if (planet.image) { %>
+<img src="<%= planet.image %>" width="250">
+<% } %>
+
+<br><br>
+
+<a href="/planets/<%= planet.id %>">View</a>
+<a href="/planets/<%= planet.id %>/edit">Edit</a>
+
+<form action="/planets/<%= planet.id %>?_method=DELETE" method="POST" style="display:inline">
+    <button>Delete</button>
+</form>
+
+<% }) %>
+
+</body>
+</html>

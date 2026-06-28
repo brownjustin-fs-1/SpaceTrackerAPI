@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galaxies</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>🌌 Galaxies</h1>
+
+<p>
+    <a href="/">Home</a> |
+    <a href="/galaxies/new">➕ Add Galaxy</a>
+</p>
+
+<% galaxies.forEach(galaxy => { %>
+
+<hr>
+
+<h2><%= galaxy.name %></h2>
+
+<p><strong>Size:</strong> <%= galaxy.size %></p>
+
+<p><%= galaxy.description %></p>
+
+<% if (galaxy.image) { %>
+<img src="<%= galaxy.image %>" width="250">
+<% } %>
+
+<br><br>
+
+<a href="/galaxies/<%= galaxy.id %>">View</a>
+
+<a href="/galaxies/<%= galaxy.id %>/edit">Edit</a>
+
+<form action="/galaxies/<%= galaxy.id %>?_method=DELETE"
+      method="POST"
+      style="display:inline">
+
+<button>Delete</button>
+
+</form>
+
+<% }) %>
+
+</body>
+</html>

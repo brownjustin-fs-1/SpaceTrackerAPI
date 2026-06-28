@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stars</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>⭐ Stars</h1>
+
+<p>
+    <a href="/">Home</a> |
+    <a href="/stars/new">➕ Add Star</a>
+</p>
+
+<% stars.forEach(star => { %>
+<hr>
+
+<h2><%= star.name %></h2>
+<p><strong>Size:</strong> <%= star.size %></p>
+<p><%= star.description %></p>
+<p><strong>Galaxy ID:</strong> <%= star.GalaxyId %></p>
+
+<% if (star.image) { %>
+<img src="<%= star.image %>" width="250">
+<% } %>
+
+<br><br>
+
+<a href="/stars/<%= star.id %>">View</a>
+<a href="/stars/<%= star.id %>/edit">Edit</a>
+
+<form action="/stars/<%= star.id %>?_method=DELETE" method="POST" style="display:inline">
+    <button>Delete</button>
+</form>
+
+<% }) %>
+
+</body>
+</html>

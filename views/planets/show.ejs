@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= planet.name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1><%= planet.name %></h1>
+
+<p><strong>Size:</strong> <%= planet.size %></p>
+<p><%= planet.description %></p>
+
+<% if (planet.image) { %>
+<img src="<%= planet.image %>" width="300">
+<% } %>
+
+<br><br>
+
+<a href="/planets">← Back</a>
+
+</body>
+</html>
